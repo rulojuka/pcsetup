@@ -55,10 +55,10 @@
   become_method: sudo
 - name: Install NetworkManager
   include_tasks: networkmanager.yml
-- name: Create Pandora's Box directory
-  include_tasks: pandorasbox.yml
-- name: Install PulseAudio
-  include_tasks: pulseaudio.yml
+#- name: Create Pandora's Box directory
+#  include_tasks: pandorasbox.yml
+#- name: Install PulseAudio
+#  include_tasks: pulseaudio.yml
 - name: Setup web browsers
   include_tasks: browsers.yml
 - name: Set timezone
@@ -76,21 +76,21 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Setup CUPS
-  include_tasks: cups.yml
-  become: yes
-  become_user: root
-  become_method: sudo
+#- name: Setup CUPS
+#  include_tasks: cups.yml
+#  become: yes
+#  become_user: root
+#  become_method: sudo
 - name: Install ttf-dejavu package # (high quality, general-purpose fonts with good Unicode coverage)
   pacman: name=ttf-dejavu state=present
   become: yes
   become_user: root
   become_method: sudo
-- name: Install xclip package
-  pacman: name=xclip state=present
-  become: yes
-  become_user: root
-  become_method: sudo
+#- name: Install xclip package
+#  pacman: name=xclip state=present
+#  become: yes
+#  become_user: root
+#  become_method: sudo
 - name: Install wget package
   pacman: name=wget state=present
   become: yes
@@ -101,38 +101,38 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Install skype package
-  pacaur: name=skypeforlinux-bin state=present
-  become: yes
-  become_user: super{{ ansible_env.LOGNAME }}
-  become_method: sudo
-- name: Install gimp package
-  pacman: name=gimp state=present
-  become: yes
-  become_user: root
-  become_method: sudo
-- name: Install inkscape package
-  pacman: name=inkscape state=present
-  become: yes
-  become_user: root
-  become_method: sudo
+#- name: Install skype package
+#  pacaur: name=skypeforlinux-bin state=present
+#  become: yes
+#  become_user: super{{ ansible_env.LOGNAME }}
+#  become_method: sudo
+#- name: Install gimp package
+#  pacman: name=gimp state=present
+#  become: yes
+#  become_user: root
+#  become_method: sudo
+#- name: Install inkscape package
+#  pacman: name=inkscape state=present
+#  become: yes
+#  become_user: root
+#  become_method: sudo
 - name: Install ntfs-3g package
   pacman: name=ntfs-3g state=present
   become: yes
   become_user: root
   become_method: sudo
-- name: Install rsync package
-  pacman: name=rsync state=present
-  become: yes
-  become_user: root
-  become_method: sudo
-- name: Install android-tools package
-  pacman: name=android-tools state=present
-  become: yes
-  become_user: root
-  become_method: sudo
-- name: Setup redshift
-  include_tasks: redshift.yml
+#- name: Install rsync package
+#  pacman: name=rsync state=present
+#  become: yes
+#  become_user: root
+#  become_method: sudo
+#- name: Install android-tools package
+#  pacman: name=android-tools state=present
+#  become: yes
+#  become_user: root
+#  become_method: sudo
+#- name: Setup redshift
+#  include_tasks: redshift.yml
 - name: Install transmission-qt package
   pacman: name=transmission-qt state=present
   become: yes

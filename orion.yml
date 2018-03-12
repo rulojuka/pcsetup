@@ -1,0 +1,11 @@
+---
+- hosts: local
+  connection: local
+  environment:
+    PATH: "/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+  roles:
+    - xorg
+    - common
+#    - nvidia
+    - awesomewm
+    - lightdm
